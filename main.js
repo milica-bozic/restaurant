@@ -23,16 +23,19 @@ searchProducts("chocolate");
 
 function drawProducts(data) {
     console.log(data);
+    // container div for food elements
     let foodContainerDiv = document.createElement("div");
     foodContainerDiv.classList.add("radio");
     
     data.hints.forEach(elem => {
-
+        // container div for each food element
         let foodDiv = document.createElement("div");
+
         foodDiv.classList.add("foodBorder");
+
         foodContainerDiv.appendChild(foodDiv);
         
-
+        // paragraph: label: name of the product
         let foodNameParagraph = document.createElement("p");
 
         foodNameParagraph.textContent = elem.food.label;
@@ -41,8 +44,7 @@ function drawProducts(data) {
 
         let foodImage = document.createElement("img");
 
-
-
+        // img of the food
         foodImage.src = elem.food.image;
 
         foodImage.alt = elem.food.label;
@@ -52,4 +54,8 @@ function drawProducts(data) {
 
     document.body.appendChild(foodContainerDiv);
 }
+
+// INPUT
+let input = document.createElement("input");
+document.body.appendChild(input);
 
