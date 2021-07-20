@@ -2,6 +2,22 @@ const apiBaseUrl = "https://api.edamam.com/api/food-database/v2/parser";
 const appId = "a1fa9480";
 const appKey = "fba8e90ad09d8cdc82794ffd61d58967";
 
+let input = document.getElementById("inputSearch");
+let button = document.getElementById("buttonSearch");
+
+input.addEventListener("keyup", (e) => {
+    if (e.key !== "Enter") {
+        e.preventDefault();
+
+        return;
+    }
+
+    let searchString = e.target.value;
+    
+    searchProducts(searchString);
+});
+
+
 function searchProducts(keyword) {
     fetch(`${apiBaseUrl}?app_id=${appId}&app_key=${appKey}&ingr=${keyword}&nutrition-type=cooking`)
     .then(response => {
@@ -16,10 +32,6 @@ function searchProducts(keyword) {
     .then(data => drawProducts(data))
     .catch(error => console.log("ERROR", error));
 }
-
-searchProducts("avocado");
-
-searchProducts("chocolate");
 
 function drawProducts(data) {
     console.log(data);
@@ -54,8 +66,3 @@ function drawProducts(data) {
 
     document.body.appendChild(foodContainerDiv);
 }
-
-// INPUT
-let input = document.createElement("input");
-document.body.appendChild(input);
-
