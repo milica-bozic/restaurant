@@ -41,3 +41,7 @@ body {
     align-items: center;
     margin-top: 30px;
 }
+
+.d_none {
+    display: none;
+}

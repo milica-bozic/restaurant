@@ -15,7 +15,7 @@ input.addEventListener("keyup", (e) => {
 
     let searchString = e.target.value;
     
-    searchProducts(searchString);
+    searchProducts(searchString);  
 });
 
 function searchProducts(keyword) {
@@ -34,19 +34,21 @@ function searchProducts(keyword) {
 }
 
 function drawProducts(data) {
-    console.log(data);
     // container div for food elements
-    let foodContainerDiv = document.createElement("div");
-    foodContainerDiv.classList.add("radio");
+    let foodContainerDiv = document.getElementById("foodList");
+
+    if (foodContainerDiv.childElementCount > 0) {
+        foodContainerDiv.innerHTML = ""; 
+    }
     
     data.hints.forEach(elem => {
-        // container div for each food element
+        // // container div for each food element
         let foodDiv = document.createElement("div");
 
         foodDiv.classList.add("foodBorder");
 
         foodContainerDiv.appendChild(foodDiv);
-        
+
         // paragraph: label: name of the product
         let foodNameParagraph = document.createElement("p");
 
@@ -63,6 +65,4 @@ function drawProducts(data) {
 
         foodDiv.appendChild(foodImage);
     });
-
-    document.body.appendChild(foodContainerDiv);
 }
