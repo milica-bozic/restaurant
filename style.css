@@ -3,6 +3,20 @@
     padding: 0;
 }
 
+h1 {
+    color: white;
+    text-shadow: 2px 2px #0400ff;
+}
+
+p {
+    color: white;
+}
+
+body {
+    background: rgb(174,238,221);
+    background: radial-gradient(circle, rgb(103, 119, 155) 0%, rgb(97, 84, 170) 100%);
+}
+
 .radio {
     border: 1px solid rgb(153, 23, 23);
 }
@@ -12,14 +26,18 @@
 }
 
 #inputSearch {
-    width: 25%;
+    width: 100%;
     height: 32px;
-    border: 2px solid rgb(34, 150, 105);
-    border-radius: 3px;
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 50px;
     padding: 5px 10px;
     font-size: 12px;
+    box-shadow: 2px 2px 2px #979097;
 }
 
-#buttonSearch {
-
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
 }

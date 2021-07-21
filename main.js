@@ -5,6 +5,7 @@ const appKey = "fba8e90ad09d8cdc82794ffd61d58967";
 let input = document.getElementById("inputSearch");
 let button = document.getElementById("buttonSearch");
 
+// SEARCH 
 input.addEventListener("keyup", (e) => {
     if (e.key !== "Enter") {
         e.preventDefault();
@@ -16,7 +17,6 @@ input.addEventListener("keyup", (e) => {
     
     searchProducts(searchString);
 });
-
 
 function searchProducts(keyword) {
     fetch(`${apiBaseUrl}?app_id=${appId}&app_key=${appKey}&ingr=${keyword}&nutrition-type=cooking`)
